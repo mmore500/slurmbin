@@ -28,3 +28,5 @@ done <<< "$job_list"
 printf "%-30s %d\n" "Held jobs:" $held_count
 printf "%-30s %d\n" "Pending jobs:" $pending_count
 printf "%-30s %d\n" "Running jobs:" $running_count
+
+echo "Quota: " $(bash -c "quota" | grep -o '[^ ]\{2,\}%' | tr '\n' ' ')
